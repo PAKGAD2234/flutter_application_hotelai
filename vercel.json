@@ -1,3 +1,4 @@
+
 {
   "framework": null,
   "buildCommand": "bash ./scripts/vercel-build.sh",
@@ -5,7 +6,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/index.html"
     }
   ]
 }
