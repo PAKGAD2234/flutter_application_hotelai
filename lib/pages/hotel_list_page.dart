@@ -75,7 +75,8 @@ class _HotelListPageState extends State<HotelListPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text('ผลการค้นหา',
-                                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w800)),
+                                style: TextStyle(
+                                    fontSize: 26, fontWeight: FontWeight.w800)),
                             const SizedBox(height: 6),
                             Text(
                               '$dest • ${formatDate(p.checkIn)} - ${formatDate(p.checkOut)} '
@@ -102,7 +103,8 @@ class _HotelListPageState extends State<HotelListPage> {
                                   child: Text('เรียงตาม: ${e.value}'),
                                 ),
                             ],
-                            onChanged: (v) => setState(() => _sort = v ?? _sort),
+                            onChanged: (v) =>
+                                setState(() => _sort = v ?? _sort),
                           ),
                         ),
                       ),
@@ -114,7 +116,8 @@ class _HotelListPageState extends State<HotelListPage> {
                       child: Column(
                         children: [
                           const SizedBox(height: 12),
-                          const Icon(Icons.search_off, size: 40, color: kTextMuted),
+                          const Icon(Icons.search_off,
+                              size: 40, color: kTextMuted),
                           const SizedBox(height: 8),
                           Text('ไม่พบโรงแรมที่ตรงกับ "$dest"'),
                           const SizedBox(height: 12),
@@ -134,7 +137,8 @@ class _HotelListPageState extends State<HotelListPage> {
                           hotel: h,
                           onTap: () => Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (_) => HotelDetailPage(hotel: h, params: p),
+                              builder: (_) =>
+                                  HotelDetailPage(hotel: h, params: p),
                             ),
                           ),
                         ),
@@ -168,16 +172,19 @@ class _HotelCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(hotel.name,
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.w800)),
               const SizedBox(height: 6),
               RatingBadge(rating: hotel.rating, reviewCount: hotel.reviewCount),
               const SizedBox(height: 6),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.location_on_outlined, size: 16, color: kTextMuted),
+                  const Icon(Icons.location_on_outlined,
+                      size: 16, color: kTextMuted),
                   const SizedBox(width: 4),
-                  Text(hotel.location, style: const TextStyle(color: kTextMuted)),
+                  Text(hotel.location,
+                      style: const TextStyle(color: kTextMuted)),
                 ],
               ),
               const SizedBox(height: 12),
@@ -190,26 +197,33 @@ class _HotelCard extends StatelessWidget {
           );
 
           final price = Column(
-            crossAxisAlignment: compact ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+            crossAxisAlignment:
+                compact ? CrossAxisAlignment.start : CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              const Text('เริ่มต้น', style: TextStyle(color: kTextMuted, fontSize: 12)),
+              const Text('เริ่มต้น',
+                  style: TextStyle(color: kTextMuted, fontSize: 12)),
               Text.rich(
                 TextSpan(
                   text: formatBaht(hotel.startPrice),
                   style: const TextStyle(
-                      fontSize: 24, fontWeight: FontWeight.w800, color: kPrimary),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                      color: kPrimary),
                   children: const [
                     TextSpan(
                       text: ' /คืน',
                       style: TextStyle(
-                          fontSize: 13, fontWeight: FontWeight.w400, color: kTextMuted),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                          color: kTextMuted),
                     ),
                   ],
                 ),
               ),
               const SizedBox(height: 10),
-              FilledButton(onPressed: onTap, child: const Text('ดูรายละเอียด ')),
+              FilledButton(
+                  onPressed: onTap, child: const Text('ดูรายละเอียด ')),
             ],
           );
 
@@ -217,7 +231,8 @@ class _HotelCard extends StatelessWidget {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                HotelImage(path: hotel.image, width: double.infinity, height: 200),
+                HotelImage(
+                    path: hotel.image, width: double.infinity, height: 200),
                 const SizedBox(height: 14),
                 details,
                 const SizedBox(height: 14),
@@ -226,7 +241,7 @@ class _HotelCard extends StatelessWidget {
             );
           }
           return Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HotelImage(path: hotel.image, width: 300, height: 190),
               const SizedBox(width: 20),

@@ -65,7 +65,8 @@ class _HomePageState extends State<HomePage> {
 
   void _search() {
     if (nightsBetween(_checkIn, _checkOut) < 1) {
-      setState(() => _error = 'วันที่ Check-out ต้องหลังวันที่ Check-in อย่างน้อย 1 วัน');
+      setState(() =>
+          _error = 'วันที่ Check-out ต้องหลังวันที่ Check-in อย่างน้อย 1 วัน');
       return;
     }
     final params = SearchParams(
@@ -164,7 +165,8 @@ class _HomePageState extends State<HomePage> {
       icon: Icons.location_on_outlined,
       child: TextField(
         controller: _destCtrl,
-        decoration: const InputDecoration.collapsed(hintText: 'ค้นหาจุดหมายปลายทาง'),
+        decoration:
+            const InputDecoration.collapsed(hintText: 'ค้นหาจุดหมายปลายทาง'),
         style: const TextStyle(fontWeight: FontWeight.w600),
         onSubmitted: (_) => _search(),
       ),
@@ -247,7 +249,8 @@ class _HomePageState extends State<HomePage> {
           ),
           if (_error != null) ...[
             const SizedBox(height: 10),
-            Text(_error!, style: const TextStyle(color: Colors.red, fontSize: 13)),
+            Text(_error!,
+                style: const TextStyle(color: Colors.red, fontSize: 13)),
           ],
         ],
       ),
@@ -281,7 +284,8 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(it.$2,
-                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+                        style: const TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w700)),
                     Text(it.$3, style: const TextStyle(color: kTextMuted)),
                   ],
                 ),
@@ -313,7 +317,7 @@ class _SearchField extends StatelessWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(10),
       child: Container(
-        height: 56,
+        height: 64,
         padding: const EdgeInsets.symmetric(horizontal: 14),
         decoration: BoxDecoration(
           border: Border.all(color: kBorder),
