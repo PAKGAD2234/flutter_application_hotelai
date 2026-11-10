@@ -1,16 +1,27 @@
-# flutter_application_hotelai
+# Hotel AI
 
-A new Flutter project.
+เว็บแอป Flutter สำหรับค้นหาโรงแรมและทำรายการจองตัวอย่าง
 
-## Getting Started
+## Build เว็บในเครื่อง
 
-This project is a starting point for a Flutter application.
+ติดตั้ง Flutter SDK ก่อน จากนั้นรันคำสั่ง:
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter pub get
+flutter build web --release
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ไฟล์เว็บที่ build แล้วอยู่ใน `build/web`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Deploy บน Vercel
+
+เตรียมไฟล์ `vercel.json` และ `scripts/vercel-build.sh` ที่อยู่ในโปรเจกต์นี้ไว้ใน Git repository แล้ว:
+
+1. Push โปรเจกต์ขึ้น GitHub หรือ Git provider ที่ Vercel รองรับ
+2. ใน Vercel เลือก **Add New → Project** แล้ว Import repository นี้
+3. ตั้ง **Framework Preset** เป็น **Other** และ **Root Directory** เป็นโฟลเดอร์รากของโปรเจกต์
+4. ให้ Vercel ใช้การตั้งค่าจาก `vercel.json` แล้วกด **Deploy**
+
+สคริปต์จะติดตั้ง Flutter stable ในสภาพแวดล้อม build ของ Vercel และสร้างเว็บไปที่ `build/web` ส่วน rewrite ใน `vercel.json` ช่วยให้เปิดหรือ refresh URL ภายในแอปได้
+
+ข้อมูลการจองของตัวอย่างนี้เก็บใน Local Storage ของเบราว์เซอร์ ไม่ได้ส่งไปยังฐานข้อมูลส่วนกลาง
