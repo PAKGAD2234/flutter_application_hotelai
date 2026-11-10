@@ -22,6 +22,6 @@ flutter build web --release
 3. ตั้ง **Framework Preset** เป็น **Other** และ **Root Directory** เป็นโฟลเดอร์รากของโปรเจกต์
 4. ให้ Vercel ใช้การตั้งค่าจาก `vercel.json` แล้วกด **Deploy**
 
-สคริปต์จะติดตั้ง Flutter stable ในสภาพแวดล้อม build ของ Vercel และสร้างเว็บไปที่ `build/web` ส่วน rewrite ใน `vercel.json` ช่วยให้เปิดหรือ refresh URL ภายในแอปได้
+สคริปต์จะติดตั้ง Flutter stable ในสภาพแวดล้อม build ของ Vercel และสร้างเว็บไปที่ `build/web` แอปใช้การเปลี่ยนหน้าภายใน Flutter จึงไม่ต้อง rewrite คำขอไฟล์รูปไปยังหน้า HTML
 
 ข้อมูลการจองของตัวอย่างนี้เก็บใน Local Storage ของเบราว์เซอร์ ไม่ได้ส่งไปยังฐานข้อมูลส่วนกลาง
